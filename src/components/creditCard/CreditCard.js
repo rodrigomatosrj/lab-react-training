@@ -1,5 +1,6 @@
 import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './CreditCard.css'
 
 function cardNumber(cardNumber){
 
@@ -17,7 +18,8 @@ function CreditCard(props){
     <div className="card" style={{backgroundColor:`${props.bgColor}`,color:`${props.color}`}}>
         <div className="card-body">
             <p className="text-right">{props.type}</p>
-            <p className="text-center">{cardNumber(props.number)}</p>
+           <p className="text-center">{cardNumber(props.number)}</p>
+
             <p>Expires {props.expirationMonth.toString().padStart(2,"0")}/{props.expirationYear} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{props.bank}</p>
             <p>{props.owner}</p>
         </div>

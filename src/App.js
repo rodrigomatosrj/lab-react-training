@@ -1,5 +1,7 @@
 import React from 'react';
-import Container from './components/container/Container';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import IdCard from "./components/idCard/IdCard";
 import Greetings from "./components/greetings/Greetings";
 import Random from "./components/random/Random";
@@ -7,72 +9,112 @@ import BoxColor from "./components/boxColor/BoxColor";
 import CreditCard from "./components/creditCard/CreditCard";
 import Rating from "./components/rating/Rating";
 import DriverCard from './components/driverCard/DriverCard';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <Container>
-      <IdCard
-        lastName='Doe'
-        firstName='John'
-        gender='male'
-        height={178}
-        birth={new Date("1992-07-14")}
-        picture="https://randomuser.me/api/portraits/men/44.jpg"
-      />
-
-      <IdCard
-        lastName='Delores '
-        firstName='Obrien'
-        gender='female'
-        height={172}
-        birth={new Date("1988-05-11")}
-        picture="https://randomuser.me/api/portraits/women/44.jpg"
-      />
-
-      <Greetings lang="de">Ludwig</Greetings>
-      <Greetings lang="fr">François</Greetings>
-
-      <Random min={1} max={6}/>
-      <Random min={1} max={100}/>
-
-      <BoxColor r={255} g={0} b={0} />
-      <BoxColor r={128} g={255} b={0} />  
-
-      <CreditCard
-  type="Visa"
-  number="0123456789018845"
-  expirationMonth={3}
-  expirationYear={2021}
-  bank="BNP"
-  owner="Maxence Bouret"
-  bgColor="#11aa99"
-  color="white" />
-<CreditCard
-  type="Master Card"
-  number="0123456789010995"
-  expirationMonth={3}
-  expirationYear={2021}
-  bank="N26"
-  owner="Maxence Bouret"
-  bgColor="#eeeeee"
-  color="#222222" />
-<CreditCard
-  type="Visa"
-  number="0123456789016984"
-  expirationMonth={12}
-  expirationYear={2019}
-  bank="Name of the Bank"
-  owner="Firstname Lastname"
-  bgColor="#ddbb55"
-  color="white" />
-
-  
+      <h1>Lab React Training</h1>
+      <h2>Iteration 1 | Component IdCard</h2>
+      <Row>
+        <Col>
+          <IdCard
+            lastName='Doe'
+            firstName='John'
+            gender='male'
+            height={178}
+            birth={new Date("1992-07-14")}
+            picture="https://randomuser.me/api/portraits/men/44.jpg"
+          />
+        </Col>
+        <Col>
+          <IdCard
+            lastName='Delores '
+            firstName='Obrien'
+            gender='female'
+            height={172}
+            birth={new Date("1988-05-11")}
+            picture="https://randomuser.me/api/portraits/women/44.jpg"
+          />
+        </Col>
+      </Row>
+      <h2>Iteration 2 | Component: Greetings</h2>
+      <Row>
+          <Col>
+            <Greetings lang="de">Ludwig</Greetings>
+          </Col>
+          <Col>  
+            <Greetings lang="fr">François</Greetings>
+          </Col>
+      </Row>
+      <h2>Iteration 3 | Component: </h2>
+      <Row>
+        <Col>
+          <Random min={1} max={6}/>
+        </Col>
+        <Col>
+          <Random min={1} max={100}/>
+        </Col>  
+      </Row>
+      <h2>Iteration 4 | Component: </h2>
+      <Row>
+        <Col>
+          <BoxColor r={255} g={0} b={0} />
+        </Col>
+        <Col>
+          <BoxColor r={128} g={255} b={0} />  
+        </Col>
+      </Row>
+      <h2>Iteration 5 | Component: </h2>
+      <Row>
+        <Col lg={4}>
+          <CreditCard
+          type="Visa"
+          number="0123456789018845"
+          expirationMonth={3}
+          expirationYear={2021}
+          bank="BNP"
+          owner="Maxence Bouret"
+          bgColor="#11aa99"
+          color="white" />
+        </Col>
+        <Col lg={4}>
+          <CreditCard
+          type="Master Card"
+          number="0123456789010995"
+          expirationMonth={3}
+          expirationYear={2021}
+          bank="N26"
+          owner="Maxence Bouret"
+          bgColor="#eeeeee"
+          color="#222222" />
+      </Col>
+      <Col lg={4}>
+        <CreditCard
+          type="Visa"
+          number="0123456789016984"
+          expirationMonth={12}
+          expirationYear={2019}
+          bank="Name of the Bank"
+          owner="Firstname Lastname"
+          bgColor="#ddbb55"
+          color="white" />
+      </Col>
+    </Row>
+   <h2>Iteration 6 | Component: </h2>
+  <Row>
+  <Col>
   <Rating>1.49</Rating>
   <Rating>1.5</Rating>
   <Rating>3</Rating>
   <Rating>4</Rating>
   <Rating>5</Rating>
+  </Col>
+</Row>
 
+ <h2>Iteration 7 | Component: </h2>
+ <Row>
+<Col>
   <DriverCard
   name="Travis Kalanick"
   rating={4.2}
@@ -81,6 +123,8 @@ function App() {
     model: "Toyota Corolla Altis",
     licensePlate: "CO42DE"
   }} />
+  </Col>
+  <Col>
 <DriverCard
   name="Dara Khosrowshahi"
   rating={4.9}
@@ -89,7 +133,8 @@ function App() {
     model: "Audi A3",
     licensePlate: "BE33ER"
   }} />
-    
+  </Col>
+    </Row>
     </Container>
   );
 }

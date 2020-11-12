@@ -7,7 +7,7 @@ function DriverCard(props){
     return (
         <div className="card">
             <div className="card-body">
-            <img src={props.img} alt="Driver Photo" width="150" className="rounded-circle" /></div>
+            <img src={props.img} alt="Driver Photo" width="150" height="150" className="rounded-circle" /></div>
             <p>{props.name}</p>
             <Rating>{props.rating}</Rating>
             <p>{props.car.model} {props.car.licensePlate}</p>
